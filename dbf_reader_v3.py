@@ -34,15 +34,6 @@ def dbfile_data_header():
 #    return yearly
 
 
-#def plot_graph(y):
-#    x = range(len(y))
-#    plot(x, y, marker='o')
-#    xlabel('Year')
-#    ylabel('Rainfall')
-#    legend(('Rainfall', 'Year'))
-#    show()
-
-
 def dataframe_csv(frame):
     return frame.to_csv('output.csv', sep=',', header=False, mode='a', index=False)
 
@@ -50,15 +41,12 @@ def dataframe_csv(frame):
 def main():
     print('==================================')
     data_header = dbfile_data_header()
-    #data_frame = dbfile_data_frame()
+    data_frame = dbfile_data_frame()
     print(data_header)
-    #print(data_frame)
-    ##print(data_frame['COLUMN_NAME'])   
-    #dataframe_csv(data_frame)
+    print(data_frame)
     print('==================================')
     #month_year = month_to_year(data_frame)
     #print(month_year)
-    #plot_graph(month_year)
 
 
 if __name__ == "__main__":
