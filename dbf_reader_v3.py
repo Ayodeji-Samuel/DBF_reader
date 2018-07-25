@@ -1,6 +1,5 @@
 ########################################################################
-# Babe I hope the code should be able to do some justice
-# to your dbf files. I make it simple as possible   love you.   Ayodeji
+#      By      Ayodeji Makinde
 ########################################################################
 
 from dbfread import DBF
@@ -11,7 +10,7 @@ from matplotlib.pyplot import plot, show, xlabel, ylabel, legend
 
 def dbfile_data_frame():
     for i in range(1,60):
-        for dbf_file in glob(r'data\Ras_{}.dbf'.format(i)): # Babe you can extend the pathname from (r'*.dbf') as (r'C:\Anna\*.dbf')...
+        for dbf_file in glob(r'data\Ras_{}.dbf'.format(i)):
             with DBF(dbf_file) as dbf:
                 frame = DataFrame(iter(dbf))
 
@@ -19,7 +18,7 @@ def dbfile_data_frame():
 
 
 def dbfile_data_header():
-    for dbf_file in glob(r'data\Ras_59.dbf'): # Babe you can extend the pathname as (r'C:\Anna\*.dbf')...
+    for dbf_file in glob(r'data\Ras_59.dbf'):
         with DBF(dbf_file) as dbf:
             frame = DataFrame(iter(dbf))
 
@@ -27,7 +26,7 @@ def dbfile_data_header():
 
 
 #def month_to_year(data_frame):
-#    data_frame = data_frame['FILE']  # Babe you can replace data_frame['FILE'] with data_frame['your_column_name'] in order to filter the Column you want
+#    data_frame = data_frame['FILE']
 #    yearly = []
 #    for x in range(0, len(data_frame), 12):
 #        yearly.append(sum(data_frame[x:x+12])/12)
@@ -43,7 +42,7 @@ def dbfile_data_header():
 #    legend(('Rainfall', 'Year'))
 #    show()
 
-# Babe I use this to convert the dataframe to CSV...then you can open the CSV in Excel if you like...then off you go
+
 def dataframe_csv(frame):
     return frame.to_csv('output.csv', sep=',', header=False, mode='a', index=False)
 
@@ -54,7 +53,7 @@ def main():
     #data_frame = dbfile_data_frame()
     print(data_header)
     #print(data_frame)
-    ##print(data_frame['COLUMN_NAME'])   # Babe you can replace print(frame) with print(frame['column_name']) in order to filter the Column you want
+    ##print(data_frame['COLUMN_NAME'])   
     #dataframe_csv(data_frame)
     print('==================================')
     #month_year = month_to_year(data_frame)
